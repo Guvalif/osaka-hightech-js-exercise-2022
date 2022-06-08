@@ -1,4 +1,5 @@
 // 初期化処理 (全てのピースをランダムに配置する)
+// ----------------------------------------------------------------------------
 for (let n = 1; n <= 16; n = n + 1) {
   const piece = document.querySelector('.pos-' + n);
 
@@ -6,11 +7,19 @@ for (let n = 1; n <= 16; n = n + 1) {
   piece.style.order = parseInt(Math.random() * 16) + 1;
 }
 
+
 // ピースがクリックしたときに実行する処理 (関数)
-function pieceClickHandler() {
+// ----------------------------------------------------------------------------
+function pieceClickHandler(event) {
   console.log('ピースがクリックされました');
+  console.log(event.target);
 }
 
-const piece01 = document.querySelector('.pos-1');
 
-piece01.addEventListener('click', pieceClickHandler);
+// 1 ～ 15 番ピースのクリックを監視し、クリックされたら pieceClickHandler を呼ぶ
+// ----------------------------------------------------------------------------
+for (let n = 1; n <= 15; n = n + 1) {
+  const piece = document.querySelector('.pos-' + n);
+
+  piece.addEventListener('click', pieceClickHandler);
+}
