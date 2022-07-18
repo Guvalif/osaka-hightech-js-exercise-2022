@@ -8,9 +8,9 @@ let right; // 空白ピース基準で 1 つ右のピースの場所を記録
 // 各ピースの場所を記録
 let positions = [
    6,  4,  3, 10,
-   7,  1,  2,  5,
+   7,  2,  1,  5,
    9, 13, 11,  8,
-  15, 14, 16, 12,
+  15, 14, 12, 16,
 ];
 
 
@@ -47,7 +47,7 @@ function component() {
 }
 
 
-// 初期化処理 (WIP: 全てのピースをランダムに配置する)
+// 初期化処理
 // ----------------------------------------------------------------------------
 component();
 calcAdjacentPositions();
@@ -57,7 +57,7 @@ calcAdjacentPositions();
 // ----------------------------------------------------------------------------
 function pieceClickHandler(event) {
   // event.target からピースの番号 N を特定する (文字で取得されるので数値に変換する)
-  const N = Number(event.target.innerHTML);
+  const N = Number(event.target.innerText);
 
   if (
     positions[N - 1] === up   ||

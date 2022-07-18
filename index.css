@@ -1,10 +1,10 @@
-.container {
+.board {
   display: flex;
   flex-wrap: wrap;
   width: 280px;
 }
 
-.item {
+.piece {
   background: #00BBDD;
   color: #FFFFFF;
   margin: 10px;
@@ -16,6 +16,7 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  border-radius: 3px;
 }
 
 /* 空白に対応するピース (16 番) のみ白抜きする */
